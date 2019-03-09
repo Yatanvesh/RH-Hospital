@@ -1,8 +1,5 @@
-import React, {useGlobal} from  'reactn';
+import React from  'reactn';
 import './Footer.css';
-import {faTwitter, faFacebook} from '@fortawesome/free-brands-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {HashLink} from 'react-router-hash-link';
 
 const Footer = () =>  {
     let bgColor = '#303841';

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'reactn';
 import './Home.css';
 import Row from "react-bootstrap/Row";
 import Col from 'react-bootstrap/Col';
@@ -12,8 +12,8 @@ import Carousel from "react-bootstrap/Carousel";
 class  Home extends React.Component{
     constructor(props) {
         super(props);
-
         this.state = {
+
         };
     }
 
