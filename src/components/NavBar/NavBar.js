@@ -10,7 +10,7 @@ class NavBar extends React.Component {
         return (
             <Navbar variant='dark' expand="md" sticky="top" className="text-center navbar-root"
                     style={{'backgroundColor':"#303841"}} >
-                <Navbar.Brand className="Silicon-Brand ml-3">Silicon Alchemists </Navbar.Brand>
+                <Navbar.Brand className="Silicon-Brand ml-3 text-danger">Silicon Alchemists</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto mr-5">
