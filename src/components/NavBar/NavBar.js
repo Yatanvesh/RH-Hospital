@@ -15,7 +15,7 @@ class NavBar extends React.Component {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto mr-5">
                         <Link to={'/'} className="nav-link">Home</Link>
-                        <Link to={'/signin'} className="nav-link ">Sign In</Link>
+                        <Link to={'/'} className="nav-link text-success"> Connected </Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
