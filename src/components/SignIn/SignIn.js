@@ -18,30 +18,13 @@ class SignIn extends React.Component{
     }
 
     handleSignIn(){
-        console.log(this);
-
-        this.props.history.push('/');
-        let s = new WebSocket('ws://10.177.7.176:3006/signinhospital');
-        let result;
-        s.onmessage = (message) => {
-            if(message == 'success')
-                this.props.history.push('/');
-            else {
-                result =false;
-            }
-
-        }
-
         let userObj= {
             email:this.state.email,
             password:this.state.password
         }
-        s.send(JSON.stringify(userObj));
-
-        // let result = this.props.onSignIn(this.state, this.props.history);
-        // if(result===false){
-        //     this.setState({failed:true});
-        // }
+        this.global.ws.send(JSON.stringify(userObj));
+        console.log(this.props.history);
+        this.setGlobal({history:this.props.history});
     }
     render() {
         return (
