@@ -3,7 +3,7 @@ import './Home.css';
 import Row from "react-bootstrap/Row";
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+// import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 class  Home extends React.Component{
     constructor(props) {
@@ -13,21 +13,25 @@ class  Home extends React.Component{
             login: false,
         };
 
-        var ws = new WebSocket('ws://10.177.7.176:3006/signinhospital');
+        var ws = new WebSocket('ws://express-man-server-rh.1d35.starter-us-east-1.openshiftapps.com/hospital');
+
+        setTimeout(()=>{
+            ws.send("lmao");
+        },1000);
+
         ws.onmessage = (message) =>{
 
-            if(message.data==='404'){
-                console.log("Error");
-            } else{
+
                 let obj = JSON.parse(message.data);
-                if(obj.action == 'success')
-                    console.log('connected')
-                else if(obj.action == 'distress'){
+                console.log(obj);
+                if(obj.action === 'success')
+                    console.log('connected');
+                else if(obj.action === 'distress'){
                     console.log("received ", obj.user);
                     this.setState({login:true});
                     this.setState(Object.assign(this.state.UserReceived, obj.user))
                 }
-            }
+
         };
         let userObj= {
             email:'silicon',
@@ -47,7 +51,7 @@ class  Home extends React.Component{
                 <Container>
                     <Row>
                         <Col >
-                            <h1 className='section-title-light text-primary text-center pb-3'>Welcome Silicon Hospital</h1>
+                            <h1 className='section-title-light text-primary text-center pb-3'>Welcome Quadrilateral Hospital</h1>
                         </Col>
                     </Row>
                     {
@@ -96,7 +100,7 @@ class  Home extends React.Component{
                             </li>
                             <li className="list-group-item my-1 mb-4">
                                 Illnesses:
-                                <span className='user-properties'> {this.state.UserReceived.ilnesses || ''}  </span>
+                                <span className='user-properties'> {this.state.UserReceived.illnesses || ''}  </span>
 
                             </li>
                             <li className="list-group-item my-1 mb-4">
@@ -106,7 +110,7 @@ class  Home extends React.Component{
                             </li>
                             <li className="list-group-item my-1 mb-4">
                                 Emergency Contact :
-                                <span className='user-properties'> {this.state.UserReceived.phoneemergency || ''} </span>
+                                <span className='user-properties'> {this.state.UserReceived.phonemergency || ''} </span>
 
                             </li>
                             <li className="list-group-item my-1 mb-4">

@@ -8,7 +8,7 @@ const Footer = () =>  {
         <div className="container-fluid">
             <div className="row">
                 <div className="col text-center footer-brand-container">
-                    <h1 className="Silicon-Brand ml-3 mt-2"><div  className='text-primary'>Silicon Alchemists</div></h1>
+                    <h1 className="Silicon-Brand ml-3 mt-2"><div  className='text-primary'>Team Quadrilaterals</div></h1>
                 </div>
             </div>
         </div>
